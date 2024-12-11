@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Natal Personalizado</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #d32f2f;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b71c1c;
+        }
+
+        .cartao {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e0f7fa;
+            border: 1px solid #00796b;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .imagem-papai-noel {
+            width: 200px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .imagem-cartao {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            max-width: 600px; /* Limite máximo de largura */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Natal!</h1>
+        <img src="papai-noel.jpg" alt="Papai Noel" class="imagem-papai-noel">
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <button onclick="gerarCartao()">Gerar Cartão</button>
+        <div id="cartao" class="cartao"></div>
+    </div>
+    <script>
+        const imagensCartoes = {
+            "Samuel": "cartao-samuel.jpg",
+            "Rodrigo": "cartao-rodrigo.jpg",
+            "Erika": "cartao-erika.jpg",
+            "Eduardo": "cartao-eduardo.jpg",
+            "Renan": "cartao-renan.jpg",
+            "Gustavo": "cartao-gustavo.jpg",
+            "Everton": "cartao-everton.jpg",
+            "Alessandra": "cartao-alessandra.jpg",
+            "Camila Gaio Santos": "cartao-camila-gs.jpg",
+            "Sarah": "cartao-sarah.jpg",
+            "Ana": "cartao-ana.jpg",
+            "Gustavo": "cartao-gustavo.jpg",
+            "Camila Rodrigues da Silva": "cartao-camila-rs.jpg",
+            "Aline": "cartao-aline.jpg",
+            "Henrique": "cartao-henrique.jpg",
+            "Camila Tome da Costa Araujo": "cartao-camila-tca.jpg",
+            "Liliane": "cartao-liliane.jpg",
+            "Amanda": "cartao-amanda.jpg",
+            "Luan": "cartao-luan.jpg",
+            "Jenifer": "cartao-jenifer.jpg",
+            "Gabriel": "cartao-gabriel.jpg",
+            "Gisele": "cartao-gisele.jpg"
+        };
+
+        function gerarCartao() {
+            const nome = document.getElementById('nome').value;
+            const cartao = document.getElementById('cartao');
+            const imagemCartao = imagensCartoes[nome];
+            if (imagemCartao) {
+                cartao.innerHTML = `<h2>Feliz Natal, ${nome}!</h2><img src="${imagemCartao}" alt="Cartão de Natal" class="imagem-cartao">`;
+                cartao.style.display = 'block';
+            } else {
+                cartao.innerHTML = `<h2>Feliz Natal!</h2><p>Que seu Natal seja cheio de alegria e amor!</p>`;
+                cartao.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
